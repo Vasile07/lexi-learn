@@ -1,14 +1,15 @@
 import levelsBackground from "../assets/images/menu/Window.png";
 import ribbon from "../assets/images/menu/Ribbon.png";
 import Level from "./Level";
+import {useLevels} from "../LevelsProvider";
 
 export default function Levels() {
-    const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const levels = useLevels();
 
-    const getLevelContainer = (levelNumber) => {
+    const getLevelContainer = (levelNumber, levelPath) => {
         return (
             <div style={{width: "15%", height: "20%"}}>
-                <Level level={levelNumber}/>
+                <Level level={levelNumber} path={levelPath}/>
             </div>
         )
     }
@@ -22,7 +23,7 @@ export default function Levels() {
             </div>
             <div style={styles.levels}>
                 {
-                    levels.map(level => getLevelContainer(level))
+                    levels.map(level => getLevelContainer(level.number, level.path))
                 }
             </div>
         </div>

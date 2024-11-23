@@ -1,12 +1,17 @@
 import buttonBackground from "../assets/images/buttons/ButtonBackground.png"
 import button from "../assets/images/buttons/SmallButton.png"
+import {useNavigate} from "react-router-dom";
 
-export default function Level(properties) {
-    const level = properties.level;
+export default function Level({level, path}) {
+    const navigate = useNavigate();
+    const goToLevel = () => {
+        navigate(path);
+    }
+
     return (
         <div style={styles.levelContainer}>
             <img src={buttonBackground} style={styles.buttonBackground} alt="buttonBackground"></img>
-            <img src={button} style={styles.button} alt="button"></img>
+            <img src={button} style={styles.button} alt="button" onClick={goToLevel}></img>
             <p style={styles.text}>{level}</p>
         </div>
     )
