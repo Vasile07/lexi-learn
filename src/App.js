@@ -3,7 +3,8 @@ import StartPage from './windows/StartPage';
 import LevelsPage from './windows/LevelsPage';
 import PaginaJoc from "./windows/PaginaJoc";
 import PrindeLexiJoc from "./components/PrindeLexiJoc";
-import {LevelsProvider} from "./LevelsProvider"; // Import LevelsPage
+import {LevelsProvider} from "./LevelsProvider";
+import RecunoasteVocaleleJoc from "./components/RecunoasteVocaleleJoc"; // Import LevelsPage
 
 function App() {
     return (
@@ -25,6 +26,15 @@ function App() {
                                />
                            }
                     />
+                    <Route path="/levels/recunoaste-vocalele"
+                           element={
+                               <PaginaJoc
+                                   component={RecunoasteVocaleleJoc}
+                                   title={"GASESTE VOCALELE!"}
+                               />
+                           }
+                    />
+
                 </Routes>
             </Router>
         </LevelsProvider>
