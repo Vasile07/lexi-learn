@@ -7,14 +7,14 @@ export default function ClickableLetter({letter, setText}) {
 
     const handleClick = () => {
         if ("aeiouAEIOU".includes(letter)) {
-            setText("Bravo")
+            setText(letter)
             setAnimate(true);
             setIsVowel(true);
             setTimeout(() => {
                 setAnimate(false);
             }, 300);
         } else {
-            setText("Mai incearca")
+            setText("Încearcă din nou!")
             setIsVowel(false);
             setShake(true); // Trigger shake animation
             setTimeout(() => {

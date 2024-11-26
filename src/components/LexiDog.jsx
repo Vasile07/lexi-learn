@@ -1,30 +1,27 @@
 import dog from "../assets/images/dog.png";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 export default function LexiDog({text}) {
-    console.log("Lexi");
+    console.log(`Lext ${text}`);
     const [enunt, setEnunt] = useState('');
 
-    const speakText = (text) => {
+    const speakText = useCallback((text) => {
         window.speechSynthesis.cancel();
 
         const speech = new SpeechSynthesisUtterance(text);
 
         speech.lang = 'ro-Ro';
-        speech.pitch = 0.5;
-        speech.rate = 0.8;
+        speech.pitch = 1;
+        speech.rate = 1;
         window.speechSynthesis.speak(speech);
-    };
+    }, []);
 
     useEffect(() => {
         setEnunt(text);
     }, []);
 
     useEffect(() => {
-        console.log(enunt)
-    }, [enunt])
-
-    useEffect(() => {
+        console.log(text)
         speakText(text);
 
     }, [text]);

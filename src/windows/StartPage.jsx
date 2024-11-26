@@ -1,9 +1,23 @@
 import CloudyBackground from "../components/CloudyBackground";
 import LexiDog from "../components/LexiDog";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {useEffect, useState} from "react";
 
 export default function StartPage() {
     const navigate = useNavigate();  // Use the useNavigate hook
+    const [text, setText] = useState('Bine ai venit în LexiLearn! Eu sunt Lexi și împreună învățăm și ne distrăm! Pentru a continua apasă butonul verde.');
+
+    useEffect(() => {
+        if (text) {
+            window.speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'ro-RO';
+            speech.pitch = 0.5;
+            speech.rate = 0.8;
+            window.speechSynthesis.speak(speech);
+        }
+    }, []);
 
     const goToLevels = () => {
       navigate('/levels');  // Programmatically navigate to LevelsPage
@@ -21,7 +35,7 @@ export default function StartPage() {
                     </p>
                 </div>
             </div>
-            <LexiDog text={"Bine ai venit la LexiLearn"}/>
+            <LexiDog text={text}/>
         </div>
     )
 }
