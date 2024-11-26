@@ -2,9 +2,18 @@ import LexiDog from "../components/LexiDog";
 import button from "../assets/images/buttons/SmallButton.png"
 import homeIcon from "../assets/images/icons/HomeIcon.png"
 import nextIcon from "../assets/images/icons/PlayIcon.png"
-import React from "react";
+import React, {useState} from "react";
 
-export default function PaginaJoc({component, title, params}) {
+export default function PaginaJoc({component, title, enunt, params}) {
+    const [text, setText] = useState(enunt);
+    const handleSetText = (newText) => {
+        if (text === newText) {
+            setText("");
+            setTimeout(() => setText(newText), 0);
+        } else {
+            setText(newText);
+        }
+    };
     return (
         <div style={styles.pageContainer}>
             <div style={styles.header}>
@@ -43,10 +52,10 @@ export default function PaginaJoc({component, title, params}) {
                 </div>
             </div>
             <div style={styles.gameScreen}>
-                {component && React.createElement(component,params)}
+                {component && React.createElement(component, {...params, setText: handleSetText})}
             </div>
             <div>
-                <LexiDog/>
+                <LexiDog text={text}/>
             </div>
         </div>
     )

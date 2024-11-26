@@ -2,9 +2,10 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import StartPage from './windows/StartPage';
 import LevelsPage from './windows/LevelsPage';
 import PaginaJoc from "./windows/PaginaJoc";
-import PrindeLexiJoc from "./components/PrindeLexiJoc";
+import PrindeLexiJoc from "./components/games/PrindeLexiJoc";
 import {LevelsProvider} from "./LevelsProvider";
-import RecunoasteVocaleleJoc from "./components/RecunoasteVocaleleJoc"; // Import LevelsPage
+import RecunoasteVocaleleJoc from "./components/games/RecunoasteVocaleleJoc";
+import SuneteSiPronuntieJoc from "./components/games/SuneteSiPronuntieJoc"; // Import LevelsPage
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                                    params={{
                                        grupuri: ["CE", "CI"]
                                    }}
+                                   enunt={"Invata silabele cu mine!"}
                                />
                            }
                     />
@@ -31,6 +33,16 @@ function App() {
                                <PaginaJoc
                                    component={RecunoasteVocaleleJoc}
                                    title={"GASESTE VOCALELE!"}
+                                   enunt={"Recunoaste vocalele cu mine!"}
+                               />
+                           }
+                    />
+                    <Route path="/levels/sunete-si-pronuntie"
+                           element={
+                               <PaginaJoc
+                                   component={SuneteSiPronuntieJoc}
+                                   title={"ÎNVĂȚĂM VOCALELE!"}
+                                   enunt={"Sa invatam pronuntia vocalelor!"}
                                />
                            }
                     />

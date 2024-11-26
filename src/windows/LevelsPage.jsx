@@ -8,7 +8,7 @@ export default function LevelsPage(properties){
     return (
         <div style={styles.pageContainer}>    
             <CloudyBackgorund />
-            <LexiDog text="Bine ai venit în pagina cu nivele, dă click pe un nivel"/>
+            <LexiDog text={"Bine ai venit în pagina cu nivele, dă click pe un nivel"}/>
             <div style={styles.levelsContainer}>
                 <Levels/>
             </div>

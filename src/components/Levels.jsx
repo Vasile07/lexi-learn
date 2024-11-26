@@ -19,7 +19,7 @@ export default function Levels() {
             <img src={levelsBackground} width={"100%"} height={"75%"} alt="Background" />
             <div style={styles.ribbonContainer}>
                 <img src={ribbon} style={styles.ribbon} alt="Ribbon" />
-                <p style={styles.ribbonText}>Levels</p>
+                <p style={styles.ribbonText}>Niveluri</p>
             </div>
             <div style={styles.levels}>
                 {

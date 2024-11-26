@@ -1,18 +1,20 @@
 import {useState} from "react";
 
-export default function ClickableLetter({letter}) {
+export default function ClickableLetter({letter, setText}) {
     const [isVowel, setIsVowel] = useState(false);
     const [animate, setAnimate] = useState(false);
     const [shake, setShake] = useState(false); // New state for shaking effect
 
     const handleClick = () => {
         if ("aeiouAEIOU".includes(letter)) {
+            setText("Bravo")
             setAnimate(true);
             setIsVowel(true);
             setTimeout(() => {
                 setAnimate(false);
             }, 300);
         } else {
+            setText("Mai incearca")
             setIsVowel(false);
             setShake(true); // Trigger shake animation
             setTimeout(() => {
