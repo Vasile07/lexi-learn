@@ -1,24 +1,36 @@
 import dog from "../assets/images/dog.png";
-import { useCallback, useEffect } from "react";
+import {useEffect, useState} from "react";
 
-export default function LexiDog(properties) {
+export default function LexiDog({text}) {
     console.log("Lexi");
+    const [enunt, setEnunt] = useState('');
 
-    const speakText = useCallback(() => {
-        const speech = new SpeechSynthesisUtterance(properties.text);
-    
-        speech.lang = 'ro'; 
-        speech.pitch = 1;      
-        speech.rate = 1;        
+    const speakText = (text) => {
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance(text);
+
+        speech.lang = 'ro-Ro';
+        speech.pitch = 0.5;
+        speech.rate = 0.8;
         window.speechSynthesis.speak(speech);
-    }, [properties.text]);
+    };
 
     useEffect(() => {
-        speakText(); // Speak the text only on component mount
-    }, [speakText]); // Dependencies include 'speakText'
+        setEnunt(text);
+    }, []);
+
+    useEffect(() => {
+        console.log(enunt)
+    }, [enunt])
+
+    useEffect(() => {
+        speakText(text);
+
+    }, [text]);
 
     return (
-        <div style={styles.container} onClick={speakText}>
+        <div style={styles.container} onClick={() => speakText(enunt)}>
             <img src={dog} width={170} height={170} alt="Lexi"/>
         </div>
     );
