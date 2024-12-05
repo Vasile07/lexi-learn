@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Cuvant from "../Cuvant";
 import cal from "../../assets/images/games/RecunoasteVocale/cal.png";
 import foc from "../../assets/images/games/RecunoasteVocale/foc.png";
@@ -7,7 +7,7 @@ import pix from "../../assets/images/games/RecunoasteVocale/pix.png";
 import fulg from "../../assets/images/games/RecunoasteVocale/fulg.png";
 import nas from "../../assets/images/games/RecunoasteVocale/nas.png";
 
-export default function RecunoasteVocaleleJoc({setText}) {
+export default function RecunoasteVocaleleJoc({setText, completeLevel}) {
     const cuvinte = [
         {cuvant: "cal", imagine: cal},
         {cuvant: "foc", imagine: foc},
@@ -16,6 +16,18 @@ export default function RecunoasteVocaleleJoc({setText}) {
         {cuvant: "fulg", imagine: fulg},
         {cuvant: "nas", imagine: nas},
     ];
+    const [vocaleGasite, setVocaleGasite] = useState(cuvinte.map(cuv => false))
+
+    useEffect(() => {
+        console.log(vocaleGasite)
+        if (vocaleGasite.filter(gasit => !gasit).length === 0)
+            completeLevel()
+    }, [vocaleGasite, completeLevel]);
+
+    const vocalaGasita = (indexCuvant) => {
+        console.log(`INDEX CUVANT: ${indexCuvant}`)
+        setVocaleGasite(vocaleGasite.map((gasit, index) => index === indexCuvant ? true : gasit))
+    }
 
     const chunkArray = (arr, size) => {
         const result = [];
@@ -35,7 +47,8 @@ export default function RecunoasteVocaleleJoc({setText}) {
                         {row.map((item, index) => (
                             <div key={index} style={styles.cell}>
                                 <div style={styles.cuvantContainer}>
-                                    <Cuvant cuvant={item.cuvant} setText={setText}/>
+                                    <Cuvant cuvant={item.cuvant} setText={setText}
+                                            vocalaGasita={() => vocalaGasita(index + (rowIndex) * 2)}/>
                                 </div>
                                 <img
                                     src={item.imagine}

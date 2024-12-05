@@ -2,9 +2,21 @@ import LexiHole from "../LexiHole";
 import {useCallback, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 
-export default function PrindeLexiJoc({ grupuri }) {
+export default function PrindeLexiJoc({grupuri, completeLevel}) {
     const [currentIndexUp, setCurrentIndexUp] = useState(null);
     const [currentText, setCurrentText] = useState(grupuri[0]);
+    const [clicked, setClicked] = useState(grupuri.map(g => false))
+
+    useEffect(() => {
+        console.log(clicked)
+        if (clicked.filter(c => !c).length === 0)
+            completeLevel()
+    }, [clicked, completeLevel]);
+
+
+    const clickGrup = (gr) => {
+        setClicked(clicked.map((c, index) => grupuri[index] === gr ? true : c))
+    }
 
     const isLexiIndexUp = useCallback((index) => {
         return index === currentIndexUp;
@@ -35,9 +47,9 @@ export default function PrindeLexiJoc({ grupuri }) {
     };
 
     const onLexiClick = (index) => {
-        // If clicked Lexi is the one currently up, choose a new one
         if (index === currentIndexUp) {
             speakText(currentText)
+            clickGrup(currentText)
 
             const timerIndex = setTimeout(() => {
                 const newIndex = getRandomIndex(index);

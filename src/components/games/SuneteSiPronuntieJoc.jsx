@@ -4,14 +4,29 @@ import pronuntie_e from "../../assets/images/games/Pronuntie/pronuntie_e.png"
 import pronuntie_i from "../../assets/images/games/Pronuntie/pronuntie_i.png"
 import pronuntie_o from "../../assets/images/games/Pronuntie/pronuntie_o.png"
 import pronuntie_u from "../../assets/images/games/Pronuntie/pronuntie_u.png"
+import {useEffect, useState} from "react";
 
-export default function SuneteSiPronuntieJoc({setText}) {
+export default function SuneteSiPronuntieJoc({setText, completeLevel}) {
     const litere = [
         {litera: "a", imagine: pronuntie_a},
         {litera: "e", imagine: pronuntie_e},
         {litera: "i", imagine: pronuntie_i},
         {litera: "o", imagine: pronuntie_o},
         {litera: "u", imagine: pronuntie_u}]
+
+    const [clicked, setClicked] = useState(litere.map(l => false))
+
+    const clickLitera = (litera) => {
+        setText(litera)
+
+        setClicked(clicked.map((click, index) => litere[index].litera === litera ? true : click))
+    }
+
+    useEffect(() => {
+        if (clicked.filter(click => !click).length === 0)
+            completeLevel()
+    }, [clicked, completeLevel]);
+
     return (
         <div style={styles.pageContainer}>
             <div style={styles.content}>
@@ -20,7 +35,9 @@ export default function SuneteSiPronuntieJoc({setText}) {
                         return (
                             <div style={styles.containerPronuntie}>
                                 <p style={styles.letterSyle}>{value.litera}</p>
-                                <div style={styles.circle} onClick={() => setText(value.litera)}>
+                                <div style={styles.circle} onClick={
+                                    () => clickLitera(value.litera)
+                                }>
                                     <div style={styles.triangle}></div>
                                 </div>
                                 <img src={value.imagine} alt={"Pronuntie A"}

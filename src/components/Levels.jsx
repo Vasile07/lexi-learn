@@ -3,13 +3,13 @@ import ribbon from "../assets/images/menu/Ribbon.png";
 import Level from "./Level";
 import {useLevels} from "../LevelsProvider";
 
-export default function Levels() {
+export default function Levels({setText}) {
     const levels = useLevels();
 
     const getLevelContainer = (levelNumber, levelPath) => {
         return (
             <div style={{width: "15%", height: "20%"}}>
-                <Level level={levelNumber} path={levelPath}/>
+                <Level level={levelNumber} path={levelPath} setText={setText}/>
             </div>
         )
     }

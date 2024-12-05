@@ -1,11 +1,11 @@
 import ClickableLetter from "./ClickableLetter";
 
-export default function Cuvant({cuvant, setText}) {
+export default function Cuvant({cuvant, setText, vocalaGasita}) {
     return (
         <div style={styles.cuvant}>
             {
                 cuvant.split('').map((letter, index) => (
-                    <ClickableLetter key={index} letter={letter} setText={setText}/>
+                    <ClickableLetter key={index} letter={letter} setText={setText} vocalaGasita={vocalaGasita}/>
                 ))
             }
         </div>

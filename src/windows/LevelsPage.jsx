@@ -1,16 +1,24 @@
-import React from "react"
+import React, {useState} from "react"
 import LexiDog from "../components/LexiDog"
 import Levels from "../components/Levels"
 import CloudyBackgorund from "../components/CloudyBackground"
 
 export default function LevelsPage(properties){
-
+    const [text, setText] = useState("Alege un nivel pe care doreşti să îl parcurgi.");
+    const handleSetText = (newText) => {
+        if (text === newText) {
+            setText("");
+            setTimeout(() => setText(newText), 0);
+        } else {
+            setText(newText);
+        }
+    };
     return (
         <div style={styles.pageContainer}>    
             <CloudyBackgorund />
-            <LexiDog text={"Alege un nivel pe care doreşti să îl parcurgi."}/>
+            <LexiDog text={text}/>
             <div style={styles.levelsContainer}>
-                <Levels/>
+                <Levels setText={handleSetText}/>
             </div>
         </div>
     )

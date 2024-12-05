@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function ClickableLetter({letter, setText}) {
+export default function ClickableLetter({letter, setText, vocalaGasita}) {
     const [isVowel, setIsVowel] = useState(false);
     const [animate, setAnimate] = useState(false);
     const [shake, setShake] = useState(false); // New state for shaking effect
@@ -10,6 +10,7 @@ export default function ClickableLetter({letter, setText}) {
             setText(letter)
             setAnimate(true);
             setIsVowel(true);
+            vocalaGasita()
             setTimeout(() => {
                 setAnimate(false);
             }, 300);

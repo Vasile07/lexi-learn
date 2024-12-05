@@ -4,8 +4,9 @@ import homeIcon from "../assets/images/icons/HomeIcon.png"
 import nextIcon from "../assets/images/icons/PlayIcon.png"
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import lock from "../assets/images/icons/lock.png";
 
-export default function PaginaJoc({component, title, enunt, levelLink, params}) {
+export default function PaginaJoc({component, title, enunt, levelLink, params, levelNumber}) {
     const [text, setText] = useState(enunt);
     const handleSetText = (newText) => {
         if (text === newText) {
@@ -16,6 +17,17 @@ export default function PaginaJoc({component, title, enunt, levelLink, params}) 
         }
     };
     const navigate = useNavigate();  // Use the useNavigate hook
+
+    const [isCompleted, setIsCompleted] = useState(false);
+    const completeLevel = () => {
+        if (isCompleted) {
+            const currentLevel = parseInt(localStorage.getItem("currentLevel"))
+            const nextLevel = levelNumber + 1
+            localStorage.setItem("currentLevel", nextLevel > currentLevel ? nextLevel.toString() : currentLevel.toString())
+            navigate('/level-complete', {state: {levelLink: levelLink}});
+        } else
+            handleSetText("Încă nu ai completat tot nivelul. Ajută-l pe Lexi până la capăt.")
+    }
 
     return (
         <div style={styles.pageContainer}>
@@ -41,7 +53,7 @@ export default function PaginaJoc({component, title, enunt, levelLink, params}) 
                     {title}
                 </div>
                 <div style={styles.nextButton} onClick={() => {
-                    navigate('/level-complete', {state: {levelLink: levelLink}});
+                    completeLevel()
                 }}>
                     <img
                         src={button}
@@ -56,10 +68,20 @@ export default function PaginaJoc({component, title, enunt, levelLink, params}) 
                         }}
                         alt={"home"}
                     />
+                    {
+                        !isCompleted &&
+                        <div style={styles.lockdiv}>
+                            <img src={lock} width={"auto"} height={"40%"} alt={"lock"}/>
+                        </div>
+                    }
                 </div>
             </div>
             <div style={styles.gameScreen}>
-                {component && React.createElement(component, {...params, setText: handleSetText})}
+                {component && React.createElement(component, {
+                    ...params,
+                    setText: handleSetText,
+                    completeLevel: () => setIsCompleted(true)
+                })}
             </div>
             <div>
                 <LexiDog text={text}/>
@@ -116,5 +138,16 @@ const styles = {
         width: "100%",
         height: "85%",
         display: "flex",
-    }
+    },
+    lockdiv: {
+        height: "100%",
+        aspectRatio: 1,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: '#D9D9D9',
+        opacity: 0.9,
+        border: "3px black solid",
+        borderRadius: "30%"
+    },
 }
