@@ -1,11 +1,17 @@
 {
   "files": {
     "main.css": "/lexi-learn/static/css/main.e6c13ad2.css",
-    "main.js": "/lexi-learn/static/js/main.75dde388.js",
+    "main.js": "/lexi-learn/static/js/main.0101c250.js",
     "static/js/453.b8a4b6b6.chunk.js": "/lexi-learn/static/js/453.b8a4b6b6.chunk.js",
+    "static/media/grass.png": "/lexi-learn/static/media/grass.6110d102bbda5521e4f2.png",
     "static/media/front.png": "/lexi-learn/static/media/front.e855d54adfd01623a8c4.png",
     "static/media/Hole.png": "/lexi-learn/static/media/Hole.ebe90e1debfeda7a309b.png",
+    "static/media/pronuntie_i.png": "/lexi-learn/static/media/pronuntie_i.cd383d0c42d89cc396a9.png",
     "static/media/clouds.png": "/lexi-learn/static/media/clouds.f0894cff80ebb9e91a87.png",
+    "static/media/pronuntie_o.png": "/lexi-learn/static/media/pronuntie_o.6e08adce87d328536148.png",
+    "static/media/pronuntie_e.png": "/lexi-learn/static/media/pronuntie_e.251e8b6532c3ee5418dd.png",
+    "static/media/pronuntie_a.png": "/lexi-learn/static/media/pronuntie_a.e29698e23096758da541.png",
+    "static/media/pronuntie_u.png": "/lexi-learn/static/media/pronuntie_u.4045b7dabd12063b27cb.png",
     "static/media/fulg.png": "/lexi-learn/static/media/fulg.52160192f3b53a2c7696.png",
     "static/media/cal.png": "/lexi-learn/static/media/cal.672cd6f19ad7fa776d6d.png",
     "static/media/mountain1.png": "/lexi-learn/static/media/mountain1.e8d3263a9becb8583889.png",
@@ -15,14 +21,15 @@
     "static/media/foc.png": "/lexi-learn/static/media/foc.90de634c665039a20241.png",
     "static/media/cer.png": "/lexi-learn/static/media/cer.818e6c1a52f27a71fb78.png",
     "static/media/nas.png": "/lexi-learn/static/media/nas.7a9c1963a0904a99eccb.png",
+    "static/media/OrangeButton.png": "/lexi-learn/static/media/OrangeButton.cde3c73a918b02c6759b.png",
     "static/media/pix.png": "/lexi-learn/static/media/pix.b81fda570045758b4ab0.png",
     "index.html": "/lexi-learn/index.html",
     "main.e6c13ad2.css.map": "/lexi-learn/static/css/main.e6c13ad2.css.map",
-    "main.75dde388.js.map": "/lexi-learn/static/js/main.75dde388.js.map",
+    "main.0101c250.js.map": "/lexi-learn/static/js/main.0101c250.js.map",
     "453.b8a4b6b6.chunk.js.map": "/lexi-learn/static/js/453.b8a4b6b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.75dde388.js"
+    "static/js/main.0101c250.js"
   ]
 }
