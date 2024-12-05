@@ -5,7 +5,8 @@ import PaginaJoc from "./windows/PaginaJoc";
 import PrindeLexiJoc from "./components/games/PrindeLexiJoc";
 import {LevelsProvider} from "./LevelsProvider";
 import RecunoasteVocaleleJoc from "./components/games/RecunoasteVocaleleJoc";
-import SuneteSiPronuntieJoc from "./components/games/SuneteSiPronuntieJoc"; // Import LevelsPage
+import SuneteSiPronuntieJoc from "./components/games/SuneteSiPronuntieJoc";
+import LevelComplete from "./windows/LevelComplete"; // Import LevelsPage
 
 function App() {
     return (
@@ -16,11 +17,13 @@ function App() {
                     {/* Define routes for your pages */}
                     <Route path="/" element={<StartPage/>}/>
                     <Route path="/levels" element={<LevelsPage/>}/>
+                    <Route path="/level-complete" element={<LevelComplete/>}/>
                     <Route path="/levels/invata-silabe"
                            element={
                                <PaginaJoc
                                    component={PrindeLexiJoc}
                                    title={"PRINDE-L PE LEXI!"}
+                                   levelLink={"/invata-silabe"}
                                    params={{
                                        grupuri: ["CE", "CI"]
                                    }}
@@ -33,6 +36,7 @@ function App() {
                                <PaginaJoc
                                    component={RecunoasteVocaleleJoc}
                                    title={"GASESTE VOCALELE!"}
+                                   levelLink={"/recunoaste-vocalele"}
                                    enunt={"Recunoaște vocalele din cuvintele de pe ecran! Dă click pe vocala din fiecare cuvânt."}
                                />
                            }
@@ -42,6 +46,7 @@ function App() {
                                <PaginaJoc
                                    component={SuneteSiPronuntieJoc}
                                    title={"ÎNVĂȚĂM VOCALELE!"}
+                                   levelLink={"/sunete-si-pronuntie"}
                                    enunt={"Vom învăța cum se pronunță vocalele. Acestea sunt cele scrise cu culoarea verde. Apasă pe butonul de sub fiecare vocală pentru a auzii pronunția."}
                                />
                            }

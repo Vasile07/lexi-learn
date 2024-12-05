@@ -9,9 +9,9 @@ export default function Level({level, path}) {
     }
 
     return (
-        <div style={styles.levelContainer}>
+        <div style={styles.levelContainer} onClick={goToLevel}>
             <img src={buttonBackground} style={styles.buttonBackground} alt="buttonBackground"></img>
-            <img src={button} style={styles.button} alt="button" onClick={goToLevel}></img>
+            <img src={button} style={styles.button} alt="button"></img>
             <p style={styles.text}>{level}</p>
         </div>
     )
@@ -26,6 +26,7 @@ const styles = {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        cursor: "pointer"
     },
     buttonBackground: {
         position: "absolute",

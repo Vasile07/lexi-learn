@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React from "react";
 import hole from "../assets/images/games/Hole.png";
 import grayLexi from "../assets/images/games/lexi-gray.png";
 
@@ -8,26 +8,29 @@ export default function LexiHole({isUp, onClick, text, factor}) {
 
     return (
         <div
-            style={{width: "100%", height: "100%", position: "relative"}}
+            style={{
+                width: "100%", height: "100%", position: "relative",
+                cursor: "pointer"
+            }}
             onClick={onClick} // Initialize and toggle
         >
             <style>
                 {`
                     @keyframes moveUp {
                         0% {
-                            transform: translate(-50%, 0%);
+                            transform: translate(-50%, -2%);
                         }
                         100% {
-                            transform: translate(-50%, -140%);
+                            transform: translate(-50%, -130%);
                         }
                     }
 
                     @keyframes moveDown {
                         0% {
-                            transform: translate(-50%, -140%);
+                            transform: translate(-50%, -130%);
                         }
                         100% {
-                            transform: translate(-50%, 0%);
+                            transform: translate(-50%, -2%);
                         }
                     }
                 `}

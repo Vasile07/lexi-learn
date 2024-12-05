@@ -91,7 +91,7 @@ export default function PrindeLexiJoc({ grupuri }) {
 
 const styles = {
     pageContainer: {
-        marginTop: 300,
+        marginTop: "15%",
         width: "100%",
         display: "flex",
         flex: 1,

@@ -3,8 +3,9 @@ import button from "../assets/images/buttons/SmallButton.png"
 import homeIcon from "../assets/images/icons/HomeIcon.png"
 import nextIcon from "../assets/images/icons/PlayIcon.png"
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-export default function PaginaJoc({component, title, enunt, params}) {
+export default function PaginaJoc({component, title, enunt, levelLink, params}) {
     const [text, setText] = useState(enunt);
     const handleSetText = (newText) => {
         if (text === newText) {
@@ -14,10 +15,14 @@ export default function PaginaJoc({component, title, enunt, params}) {
             setText(newText);
         }
     };
+    const navigate = useNavigate();  // Use the useNavigate hook
+
     return (
         <div style={styles.pageContainer}>
             <div style={styles.header}>
-                <div style={styles.homeButton}>
+                <div style={styles.homeButton} onClick={() => {
+                    navigate('/levels');
+                }}>
                     <img
                         src={button}
                         style={{width: "100%", height: "100%", objectFit: "contain", position: "absolute"}}
@@ -35,7 +40,9 @@ export default function PaginaJoc({component, title, enunt, params}) {
                 <div style={styles.titleBanner}>
                     {title}
                 </div>
-                <div style={styles.nextButton}>
+                <div style={styles.nextButton} onClick={() => {
+                    navigate('/level-complete', {state: {levelLink: levelLink}});
+                }}>
                     <img
                         src={button}
                         style={{width: "100%", height: "100%", objectFit: "contain", position: "absolute"}}
@@ -82,6 +89,7 @@ const styles = {
         width: "20%",
         height: "90%",
         position: "relative",
+        cursor: "pointer"
     },
     titleBanner: {
         width: "60%",
@@ -102,6 +110,7 @@ const styles = {
         width: "20%",
         height: "90%",
         position: "relative",
+        cursor: "pointer"
     },
     gameScreen: {
         width: "100%",
