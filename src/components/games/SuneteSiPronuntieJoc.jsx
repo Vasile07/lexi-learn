@@ -65,6 +65,7 @@ const styles = {
         display: "flex",
         width: "100%",
         flex: 1,
+        maxHeight: "73%",
         alignItems: "center",
         justifyContent: "center",
         gap: "5%",
@@ -80,8 +81,9 @@ const styles = {
         textAlign: "center",
     },
     grass: {
+        display: "flex",
         width: "100%",
-        height: "auto",
+        flex: 1,
         maxHeight: "27%",
     },
     letterSyle: {

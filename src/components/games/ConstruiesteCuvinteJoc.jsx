@@ -6,7 +6,7 @@ export default function ConstruiesteCuvinteJoc({setText, completeLevel}) {
     const [animateOption, setAnimateOption] = useState(null); // To track the option being animated
     const bridgeRef = useRef(null);
     const inceputRef = useRef(null);
-    const [bridgeTop, setBridgeTop] = useState("65%");
+    const bridgeTop = "65%";
     const [distanta, setDistanta] = useState({x: 0, y: 0});
     const [imagePosition, setImagePosition] = useState({left: null, bottom: null});
 
@@ -81,13 +81,6 @@ export default function ConstruiesteCuvinteJoc({setText, completeLevel}) {
     useEffect(() => {
         if (currentIndex === cuvinte.length && currentIndex !== 0) completeLevel();
     }, [completeLevel, currentIndex, cuvinte.length]);
-
-    useEffect(() => {
-        // console.log("asdadsa")
-        if (bridgeRef.current) {
-            setBridgeTop(bridgeRef.current.getBoundingClientRect().height);
-        }
-    }, [bridgeRef]);
 
     const startAnimation = (cuvant) => {
         setAnimateOption(cuvant);
