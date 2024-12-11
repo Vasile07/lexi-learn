@@ -20,6 +20,11 @@ export const LevelsProvider = ({children}) => {
             number: 4,
             path: "/levels/invata-silabe"
         },
+        {
+            number: 5,
+            path: "/levels/construieste-cuvintele"
+
+        }
     ];
 
     return (

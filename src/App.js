@@ -8,7 +8,8 @@ import RecunoasteVocaleleJoc from "./components/games/RecunoasteVocaleleJoc";
 import SuneteSiPronuntieJoc from "./components/games/SuneteSiPronuntieJoc";
 import LevelComplete from "./windows/LevelComplete";
 import {useEffect} from "react";
-import AsociereCuvinteJoc from "./components/games/AsociereCuvinteJoc"; // Import LevelsPage
+import AsociereCuvinteJoc from "./components/games/AsociereCuvinteJoc";
+import ConstruiesteCuvinteJoc from "./components/games/ConstruiesteCuvinteJoc"; // Import LevelsPage
 
 function App() {
 
@@ -69,6 +70,17 @@ function App() {
                                        grupuri: ["MA", "ME", "MI", "MO", "MU"]
                                    }}
                                    enunt={"Lexi are câteva surprize pentru tine! Prinde-l pe Lexi pentru a descoperii surpriza! Apasă pe acesta de fiecare dată când iese din mușuroi."}
+                               />
+                           }
+                    />
+                    <Route path="/levels/construieste-cuvintele"
+                           element={
+                               <PaginaJoc
+                                   levelNumber={5}
+                                   component={ConstruiesteCuvinteJoc}
+                                   title={"CONSTRUIEȘTE CUVINTELE!"}
+                                   levelLink={"/construieste-cuvintele"}
+                                   enunt={"Ajută-l pe Lexi să găsească cealaltă jumătate a cuvântului aflat pe pod! Alege varianta corectă!"}
                                />
                            }
                     />
