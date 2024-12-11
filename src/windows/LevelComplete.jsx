@@ -17,8 +17,21 @@ export default function LevelComplete() {
 
     return (
         <div style={styles.pageContainer}>
+            <style>
+                {`
+                @keyframes flicker {
+                  0%, 100% {
+                    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+                  }
+                  50% {
+                    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
+                  }
+                }
+              `}
+            </style>
             <CloudyBackground/>
-            <LexiDog text={"Alege un nivel pe care doreşti să îl parcurgi."}/>
+            <LexiDog
+                text={"Felicitări! Ai reușit să rezolvi perfect acest nivel! Pentru a continua apasă butonul verde. Dacă dorești să refaci nivelul apasă butonul portocaliu."}/>
             <div style={styles.levelsContainer}>
                 <img src={levelsBackground} width={"100%"} height={"100%"} alt="Background"/>
                 <div style={styles.ribbonContainer}>
@@ -26,14 +39,15 @@ export default function LevelComplete() {
                     <p style={styles.ribbonText}>Felicitări!</p>
                 </div>
                 <div style={styles.buttonContainer}>
-                    <div style={styles.button} onClick={() => {
+                    <div style={{...styles.button}} onClick={() => {
                         navigate('/levels');
                     }}>
                         <img
                             src={button}
                             style={{
                                 width: "100%", height: "100%", objectFit: "contain", gridColumn: 1,
-                                gridRow: 1
+                                gridRow: 1,
+                                animation: "flicker 1s ease-in infinite"
                             }}
                             alt={"button"}
                         />

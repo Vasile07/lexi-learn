@@ -3,10 +3,24 @@ import React, {createContext, useContext} from "react";
 const LevelsContext = createContext([]);
 
 export const LevelsProvider = ({children}) => {
-    const levels = [{number: 1, path: "/levels/invata-silabe"}, {
-        number: 2,
-        path: "/levels/recunoaste-vocalele"
-    }, {number: 3, path: "/levels/sunete-si-pronuntie"}];
+    const levels = [
+        {
+            number: 1,
+            path: "/levels/sunete-si-pronuntie"
+        },
+        {
+            number: 2,
+            path: "/levels/recunoaste-vocalele"
+        },
+        {
+            number: 3,
+            path: "/levels/potriveste-cuvinte"
+        },
+        {
+            number: 4,
+            path: "/levels/invata-silabe"
+        },
+    ];
 
     return (
         <LevelsContext.Provider value={levels}>

@@ -2,7 +2,7 @@ import LexiHole from "../LexiHole";
 import {useCallback, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 
-export default function PrindeLexiJoc({grupuri, completeLevel}) {
+export default function PrindeLexiJoc({grupuri, completeLevel, setText}) {
     const [currentIndexUp, setCurrentIndexUp] = useState(null);
     const [currentText, setCurrentText] = useState(grupuri[0]);
     const [clicked, setClicked] = useState(grupuri.map(g => false))
@@ -39,11 +39,12 @@ export default function PrindeLexiJoc({grupuri, completeLevel}) {
     }
 
     const speakText = (text) => {
-        const speech = new SpeechSynthesisUtterance(text);
-        speech.lang = "ro-RO";
-        speech.pitch = -2;
-        speech.rate = 1;
-        window.speechSynthesis.speak(speech);
+        // const speech = new SpeechSynthesisUtterance(text);
+        // speech.lang = "ro-RO";
+        // speech.pitch = -2;
+        // speech.rate = 1;
+        // window.speechSynthesis.speak(speech);
+        setText(text)
     };
 
     const onLexiClick = (index) => {
