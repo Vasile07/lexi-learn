@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lexi-learn/static/css/main.e6c13ad2.css",
-    "main.js": "/lexi-learn/static/js/main.f7db8ce5.js",
+    "main.js": "/lexi-learn/static/js/main.7ab61412.js",
     "static/js/453.b8a4b6b6.chunk.js": "/lexi-learn/static/js/453.b8a4b6b6.chunk.js",
     "static/media/tata.png": "/lexi-learn/static/media/tata.f41b8cda04ef0b0ae20b.png",
     "static/media/mure.png": "/lexi-learn/static/media/mure.92bf9471089f4a108430.png",
@@ -34,11 +34,11 @@
     "static/media/pix.png": "/lexi-learn/static/media/pix.b81fda570045758b4ab0.png",
     "index.html": "/lexi-learn/index.html",
     "main.e6c13ad2.css.map": "/lexi-learn/static/css/main.e6c13ad2.css.map",
-    "main.f7db8ce5.js.map": "/lexi-learn/static/js/main.f7db8ce5.js.map",
+    "main.7ab61412.js.map": "/lexi-learn/static/js/main.7ab61412.js.map",
     "453.b8a4b6b6.chunk.js.map": "/lexi-learn/static/js/453.b8a4b6b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.f7db8ce5.js"
+    "static/js/main.7ab61412.js"
   ]
 }
