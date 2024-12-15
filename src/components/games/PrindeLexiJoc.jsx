@@ -108,7 +108,7 @@ const styles = {
         width: "100%",
         display: "flex",
         flex: 1,
-        gap: 100,
+        gap: "10vh",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",

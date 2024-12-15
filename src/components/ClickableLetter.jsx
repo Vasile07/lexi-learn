@@ -76,7 +76,7 @@ const styles = {
     baseStyle: {
         width: "fit-content",
         height: "fit-content",
-        fontSize: 150,
+        fontSize: "10vw",
         fontFamily: "Jomhuria, sans-serif",
         display: "inline-block",
         transition: "all 0.5s ease",

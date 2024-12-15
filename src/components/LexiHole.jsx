@@ -3,8 +3,6 @@ import hole from "../assets/images/games/Hole.png";
 import grayLexi from "../assets/images/games/lexi-gray.png";
 
 export default function LexiHole({isUp, onClick, text, factor}) {
-    // const [isUp, setIsUp] = useState(null); // Start with `null` to prevent animation on render
-
 
     return (
         <div
@@ -16,30 +14,31 @@ export default function LexiHole({isUp, onClick, text, factor}) {
         >
             <style>
                 {`
-                    @keyframes moveUp {
-                        0% {
-                            transform: translate(-50%, -2%);
-                        }
-                        100% {
-                            transform: translate(-50%, -130%);
-                        }
-                    }
+    @keyframes moveUp {
+        0% {
+            bottom: 0;
+        }
+        100% {
+            bottom: 115%;
+        }
+    }
 
-                    @keyframes moveDown {
-                        0% {
-                            transform: translate(-50%, -130%);
-                        }
-                        100% {
-                            transform: translate(-50%, -2%);
-                        }
-                    }
-                `}
+    @keyframes moveDown {
+        0% {
+            bottom: 115%;
+        }
+        100% {
+            bottom: 0;
+        }
+    }
+`}
             </style>
+
             <img src={hole} width={"100%"} height={"auto"} style={{...styles.hole, zIndex: 3 * factor}}/>
-            <div style={{...styles.cover, zIndex: 2*factor}}/>
+            <div style={{...styles.cover, zIndex: 2 * factor}}/>
             <div style={{
                 ...styles.lexi,
-                zIndex: 1*factor,
+                zIndex: 1 * factor,
                 animation:
                     isUp === null
                         ? "none" // No animation on initial render
@@ -52,6 +51,7 @@ export default function LexiHole({isUp, onClick, text, factor}) {
                     src={grayLexi}
                     width={"100%"}
                     height={"auto"}
+                    style={{maxHeight: 200}}
                 />
             </div>
         </div>
@@ -61,7 +61,7 @@ export default function LexiHole({isUp, onClick, text, factor}) {
 const styles = {
     hole: {
         position: "absolute",
-        bottom: "100%",
+        bottom: "90%",
     },
     lexi: {
         width: "fit-content",
@@ -71,20 +71,19 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
-        top: 0,
+        bottom: 0,
         left: "50%",
         transform: "translateX(-50%)", // Default position
     },
     cover: {
         backgroundColor: "#F5E3A9",
         position: "absolute",
-        top: -10,
         width: "100%",
         height: "100%",
     },
     lexiText: {
         margin: 0,
-        fontSize: 50,
+        fontSize: "6vh",
         fontFamily: "Jomhuria, sans-serif",
     }
 };

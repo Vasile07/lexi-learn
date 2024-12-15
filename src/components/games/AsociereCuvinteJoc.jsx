@@ -205,13 +205,13 @@ const styles = {
         height: "fit-content"
     },
     vowel: {
-        fontSize: 100,
+        fontSize: "15vh",
         fontFamily: "Jomhuria, sans-serif",
         margin: 0,
         color: "#79AF2D"
     },
     consonant: {
-        fontSize: 100,
+        fontSize: "15vh",
         fontFamily: "Jomhuria, sans-serif",
         margin: 0,
         color: "#000"
@@ -225,8 +225,10 @@ const styles = {
         alignItems: "center",
     },
     image: {
-        width: "fit-content",
-        height: "50%",
+        maxHeight: "250px",
+        maxWidth: "250px",
+        height: "40%",
+        width: "auto",
         userSelect: "none",
     }
 }

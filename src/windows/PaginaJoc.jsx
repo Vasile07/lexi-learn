@@ -122,7 +122,7 @@ const styles = {
         backgroundColor: "#94DD2F",
         color: "#fff",
         textShadow: "0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black",
-        fontSize: 120,
+        fontSize: "6vw",
         fontFamily: "Jomhuria, sans-serif",
     },
     nextButton: {
