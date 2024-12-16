@@ -33,6 +33,7 @@ function App() {
                                    component={SuneteSiPronuntieJoc}
                                    title={"ÎNVĂȚĂM VOCALELE!"}
                                    levelLink={"/sunete-si-pronuntie"}
+                                   nextLevelLink={"/recunoaste-vocalele"}
                                    enunt={"Vom învăța cum se pronunță vocalele. Acestea sunt cele scrise cu culoarea verde. Apasă pe butonul de sub fiecare vocală pentru a auzii pronunția."}
                                />
                            }
@@ -44,6 +45,7 @@ function App() {
                                    component={RecunoasteVocaleleJoc}
                                    title={"GASESTE VOCALELE!"}
                                    levelLink={"/recunoaste-vocalele"}
+                                   nextLevelLink={"/potriveste-cuvinte"}
                                    enunt={"Recunoaște vocalele din cuvintele de pe ecran! Dă click pe vocala din fiecare cuvânt."}
                                />
                            }
@@ -55,6 +57,7 @@ function App() {
                                    component={AsociereCuvinteJoc}
                                    title={"POTRIVEȘTE CUVINTELE!"}
                                    levelLink={"/potriveste-cuvinte"}
+                                   nextLevelLink={"/invata-silabe"}
                                    enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
                                />
                            }
@@ -66,6 +69,8 @@ function App() {
                                    component={PrindeLexiJoc}
                                    title={"PRINDE-L PE LEXI!"}
                                    levelLink={"/invata-silabe"}
+
+                                   nextLevelLink={"/construieste-cuvintele"}
                                    params={{
                                        grupuri: ["MA", "ME", "MI", "MO", "MU"]
                                    }}

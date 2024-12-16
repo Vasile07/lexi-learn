@@ -14,6 +14,7 @@ export default function LevelComplete() {
     const navigate = useNavigate();
     const location = useLocation();
     const levelLink = location.state?.levelLink;
+    const nextLevel = location.state?.nextLevel;
 
     return (
         <div style={styles.pageContainer}>
@@ -40,7 +41,10 @@ export default function LevelComplete() {
                 </div>
                 <div style={styles.buttonContainer}>
                     <div style={{...styles.button}} onClick={() => {
-                        navigate('/levels');
+                        if (nextLevel)
+                            navigate(`/levels/${nextLevel}`);
+                        else
+                            navigate(`/levels`);
                     }}>
                         <img
                             src={button}

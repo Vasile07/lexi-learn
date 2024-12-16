@@ -6,7 +6,7 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import lock from "../assets/images/icons/lock.png";
 
-export default function PaginaJoc({component, title, enunt, levelLink, params, levelNumber}) {
+export default function PaginaJoc({component, title, enunt, levelLink, nextLevelLink, params, levelNumber}) {
     const [text, setText] = useState(enunt);
     const handleSetText = (newText) => {
         if (text === newText) {
@@ -24,7 +24,7 @@ export default function PaginaJoc({component, title, enunt, levelLink, params, l
             const currentLevel = parseInt(localStorage.getItem("currentLevel"))
             const nextLevel = levelNumber + 1
             localStorage.setItem("currentLevel", nextLevel > currentLevel ? nextLevel.toString() : currentLevel.toString())
-            navigate('/level-complete', {state: {levelLink: levelLink}});
+            navigate('/level-complete', {state: {levelLink: levelLink, nextLevel: nextLevelLink}});
         } else
             handleSetText("Încă nu ai completat tot nivelul. Ajută-l pe Lexi până la capăt.")
     }
