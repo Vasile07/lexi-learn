@@ -34,6 +34,7 @@ const styles = {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        overflow: "hidden",
     },
     levelsContainer: {
         width: "40%",

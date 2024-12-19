@@ -24,6 +24,11 @@ export const LevelsProvider = ({children}) => {
             number: 5,
             path: "/levels/construieste-cuvintele"
 
+        },
+        {
+            number: 6,
+            path: "/levels/strange-oasele"
+
         }
     ];
 

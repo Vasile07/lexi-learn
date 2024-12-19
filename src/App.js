@@ -9,7 +9,8 @@ import SuneteSiPronuntieJoc from "./components/games/SuneteSiPronuntieJoc";
 import LevelComplete from "./windows/LevelComplete";
 import {useEffect} from "react";
 import AsociereCuvinteJoc from "./components/games/AsociereCuvinteJoc";
-import ConstruiesteCuvinteJoc from "./components/games/ConstruiesteCuvinteJoc"; // Import LevelsPage
+import ConstruiesteCuvinteJoc from "./components/games/ConstruiesteCuvinteJoc";
+import StrangeOaseleJoc from "./components/games/StrangeOaseleJoc";
 
 function App() {
 
@@ -88,6 +89,18 @@ function App() {
                                    enunt={"Ajută-l pe Lexi să găsească cealaltă jumătate a cuvântului aflat pe pod! Alege varianta corectă!"}
                                />
                            }
+                    />
+                    <Route
+                        path={"/levels/strange-oasele"}
+                        element={
+                            <PaginaJoc
+                                levelNumber={6}
+                                component={StrangeOaseleJoc}
+                                title={"Strange oasele lui Lexi!"}
+                                levelLink={"/construieste-cuvintele"}
+                                enunt={"Lexi şi-a pierdut oasele în grădină. Ajută-l pe Lexi să le strângă doar pe acelea care au vocale pe ele, acelea sunt preferatele lui Lexi!"}
+                            />
+                        }
                     />
                 </Routes>
             </Router>
