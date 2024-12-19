@@ -51,17 +51,17 @@ function App() {
                                />
                            }
                     />
-                    <Route path="/levels/potriveste-cuvinte"
-                           element={
-                               <PaginaJoc
-                                   levelNumber={3}
-                                   component={AsociereCuvinteJoc}
-                                   title={"POTRIVEȘTE CUVINTELE!"}
-                                   levelLink={"/potriveste-cuvinte"}
-                                   nextLevelLink={"/invata-silabe"}
-                                   enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
-                               />
-                           }
+                    <Route
+                        path={"/levels/strange-oasele"}
+                        element={
+                            <PaginaJoc
+                                levelNumber={3}
+                                component={StrangeOaseleJoc}
+                                title={"Strange oasele lui Lexi!"}
+                                levelLink={"/construieste-cuvintele"}
+                                enunt={"Lexi şi-a pierdut oasele în grădină. Ajută-l pe Lexi să le strângă doar pe acelea care au vocale pe ele, acelea sunt preferatele lui Lexi!"}
+                            />
+                        }
                     />
                     <Route path="/levels/invata-silabe"
                            element={
@@ -90,17 +90,17 @@ function App() {
                                />
                            }
                     />
-                    <Route
-                        path={"/levels/strange-oasele"}
-                        element={
-                            <PaginaJoc
-                                levelNumber={6}
-                                component={StrangeOaseleJoc}
-                                title={"Strange oasele lui Lexi!"}
-                                levelLink={"/construieste-cuvintele"}
-                                enunt={"Lexi şi-a pierdut oasele în grădină. Ajută-l pe Lexi să le strângă doar pe acelea care au vocale pe ele, acelea sunt preferatele lui Lexi!"}
-                            />
-                        }
+                    <Route path="/levels/potriveste-cuvinte"
+                           element={
+                               <PaginaJoc
+                                   levelNumber={6}
+                                   component={AsociereCuvinteJoc}
+                                   title={"POTRIVEȘTE CUVINTELE!"}
+                                   levelLink={"/potriveste-cuvinte"}
+                                   nextLevelLink={"/invata-silabe"}
+                                   enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
+                               />
+                           }
                     />
                 </Routes>
             </Router>

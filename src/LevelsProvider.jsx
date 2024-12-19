@@ -14,7 +14,7 @@ export const LevelsProvider = ({children}) => {
         },
         {
             number: 3,
-            path: "/levels/potriveste-cuvinte"
+            path: "/levels/strange-oasele"
         },
         {
             number: 4,
@@ -23,13 +23,11 @@ export const LevelsProvider = ({children}) => {
         {
             number: 5,
             path: "/levels/construieste-cuvintele"
-
         },
         {
             number: 6,
-            path: "/levels/strange-oasele"
-
-        }
+            path: "/levels/potriveste-cuvinte"
+        },
     ];
 
     return (
