@@ -28,6 +28,10 @@ export const LevelsProvider = ({children}) => {
             number: 6,
             path: "/levels/potriveste-cuvinte"
         },
+        {
+            number: 7,
+            path: "/levels/gaseste-diferenta"
+        },
     ];
 
     return (

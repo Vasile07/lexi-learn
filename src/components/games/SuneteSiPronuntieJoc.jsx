@@ -8,16 +8,16 @@ import {useEffect, useState} from "react";
 
 export default function SuneteSiPronuntieJoc({setText, completeLevel}) {
     const litere = [
-        {litera: "a", imagine: pronuntie_a},
-        {litera: "e", imagine: pronuntie_e},
-        {litera: "i", imagine: pronuntie_i},
-        {litera: "o", imagine: pronuntie_o},
-        {litera: "u", imagine: pronuntie_u}]
+        {litera: "a", pronuntie: "a", imagine: pronuntie_a},
+        {litera: "e", pronuntie: "EEE", imagine: pronuntie_e},
+        {litera: "i", pronuntie: "i", imagine: pronuntie_i},
+        {litera: "o", pronuntie: "o", imagine: pronuntie_o},
+        {litera: "u", pronuntie: "UUU", imagine: pronuntie_u}]
 
     const [clicked, setClicked] = useState(litere.map(l => false))
 
-    const clickLitera = (litera) => {
-        setText(litera)
+    const clickLitera = (litera, pronuntie) => {
+        setText(pronuntie)
 
         setClicked(clicked.map((click, index) => litere[index].litera === litera ? true : click))
     }
@@ -36,7 +36,7 @@ export default function SuneteSiPronuntieJoc({setText, completeLevel}) {
                             <div style={styles.containerPronuntie}>
                                 <p style={styles.letterSyle}>{value.litera}</p>
                                 <div style={styles.circle} onClick={
-                                    () => clickLitera(value.litera)
+                                    () => clickLitera(value.litera, value.pronuntie)
                                 }>
                                     <div style={styles.triangle}></div>
                                 </div>

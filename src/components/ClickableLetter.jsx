@@ -7,7 +7,10 @@ export default function ClickableLetter({letter, setText, vocalaGasita}) {
 
     const handleClick = () => {
         if ("aeiouAEIOU".includes(letter)) {
-            setText(letter)
+            if (letter === "e")
+                setText("EEE")
+            else
+                setText(letter)
             setAnimate(true);
             setIsVowel(true);
             vocalaGasita()

@@ -47,7 +47,7 @@ function App() {
                                    component={RecunoasteVocaleleJoc}
                                    title={"GASESTE VOCALELE!"}
                                    levelLink={"/recunoaste-vocalele"}
-                                   nextLevelLink={"/potriveste-cuvinte"}
+                                   nextLevelLink={"/strange-oasele"}
                                    enunt={"Recunoaște vocalele din cuvintele de pe ecran! Dă click pe vocala din fiecare cuvânt."}
                                />
                            }
@@ -59,7 +59,8 @@ function App() {
                                 levelNumber={3}
                                 component={StrangeOaseleJoc}
                                 title={"Strange oasele lui Lexi!"}
-                                levelLink={"/construieste-cuvintele"}
+                                levelLink={"/strange-oasele"}
+                                nextLevelLink={"/invata-silabe"}
                                 enunt={"Lexi şi-a pierdut oasele în grădină. Ajută-l pe Lexi să le strângă doar pe acelea care au vocale pe ele, acelea sunt preferatele lui Lexi!"}
                             />
                         }
@@ -87,6 +88,7 @@ function App() {
                                    component={ConstruiesteCuvinteJoc}
                                    title={"CONSTRUIEȘTE CUVINTELE!"}
                                    levelLink={"/construieste-cuvintele"}
+                                   nextLevelLink={"/potriveste-cuvinte"}
                                    enunt={"Ajută-l pe Lexi să găsească cealaltă jumătate a cuvântului aflat pe pod! Alege varianta corectă!"}
                                />
                            }
@@ -98,7 +100,7 @@ function App() {
                                    component={AsociereCuvinteJoc}
                                    title={"POTRIVEȘTE CUVINTELE!"}
                                    levelLink={"/potriveste-cuvinte"}
-                                   // nextLevelLink={"/invata-silabe"}
+                                   nextLevelLink={"/gaseste-diferenta"}
                                    enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
                                />
                            }
@@ -110,8 +112,7 @@ function App() {
                                    component={GasesteDiferentaJoc}
                                    title={"GASESTE DIFERENTA!"}
                                    levelLink={"/gaseste-diferenta"}
-                                   // nextLevelLink={"/invata-silabe"}
-                                   enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
+                                   enunt={"Alege cuvântul care definește cel mai bine imaginea dată! Apasă pe cuvântul corect!"}
                                />
                            }
                     />

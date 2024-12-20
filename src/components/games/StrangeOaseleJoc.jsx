@@ -137,8 +137,8 @@ const StrangeOaseleJoc = ({setText, completeLevel}) => {
                                                 // position: "absolute",
                                                 // top: `${item.top}%`,
                                                 // left: `${item.left}%`,
-                                                width: "110px",
-                                                height: "90px",
+                                                width: "150px",
+                                                height: "120px",
                                                 display: "flex",
                                                 justifyContent: "center",
                                                 alignItems: "center",
@@ -149,9 +149,9 @@ const StrangeOaseleJoc = ({setText, completeLevel}) => {
                                             }}
                                         >
                                             <p style={{
-                                                fontSize: 18,
+                                                fontSize: 30,
                                                 fontWeight: "bold",
-                                                margin: "0px 0px 5px 0px"
+                                                margin: "0px 6px 10px 0px"
                                             }}>{item.letter}</p>
 
                                         </div>
