@@ -11,6 +11,7 @@ import {useEffect} from "react";
 import AsociereCuvinteJoc from "./components/games/AsociereCuvinteJoc";
 import ConstruiesteCuvinteJoc from "./components/games/ConstruiesteCuvinteJoc";
 import StrangeOaseleJoc from "./components/games/StrangeOaseleJoc";
+import GasesteDiferentaJoc from "./components/games/GasesteDiferentaJoc";
 
 function App() {
 
@@ -97,11 +98,24 @@ function App() {
                                    component={AsociereCuvinteJoc}
                                    title={"POTRIVEȘTE CUVINTELE!"}
                                    levelLink={"/potriveste-cuvinte"}
-                                   nextLevelLink={"/invata-silabe"}
+                                   // nextLevelLink={"/invata-silabe"}
                                    enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
                                />
                            }
                     />
+                    <Route path="/levels/gaseste-diferenta"
+                           element={
+                               <PaginaJoc
+                                   levelNumber={7}
+                                   component={GasesteDiferentaJoc}
+                                   title={"GASESTE DIFERENTA!"}
+                                   levelLink={"/gaseste-diferenta"}
+                                   // nextLevelLink={"/invata-silabe"}
+                                   enunt={"Potrivește cuvintele cu imaginile corespunzătoare!"}
+                               />
+                           }
+                    />
+
                 </Routes>
             </Router>
         </LevelsProvider>
