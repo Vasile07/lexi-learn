@@ -28,7 +28,7 @@ const StrangeOaseleJoc = ({setText, completeLevel}) => {
 
     useEffect(() => {
         const items = [];
-        const numItems = 25;
+        const numItems = 18;
         const positions = [];
 
         for (let i = 0; i < numItems; i++) {
